@@ -1,0 +1,92 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'maven'
+
+//发布到本地maven仓库
+//https://www.jianshu.com/p/7a532de0b111
+//https://www.jianshu.com/p/cff4684803f3
+uploadArchives{
+    repositories.mavenDeployer{
+        // 本地仓库路径
+        repository(url:"file:///home/iron/.m2/repository/")
+        // 唯一标识
+        pom.groupId = "com.aoshuotec.iron.cornerstone"
+        // 项目名称
+        pom.artifactId = "cornerstone"
+        // 版本号
+        pom.version = "1.0.2"
+    }
+}
+
+//9d003e5d30b29016fbe8368ae3ddac860106f882
+
+//构建自己的 aar仓库包
+//https://www.jianshu.com/p/9aedfd749cec
+//https://jitpack.io/docs/ANDROID/
+group='com.github.jzzhrqp'
+android {
+    compileSdkVersion 26
+
+
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    //Retrofit2
+    compile 'com.squareup.retrofit2:retrofit:2.3.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.3.0'
+    compile 'com.google.code.gson:gson:2.8.2'
+    //Rxjava2
+    compile 'com.squareup.retrofit2:adapter-rxjava2:2.2.0'
+    compile 'io.reactivex.rxjava2:rxjava:2.1.7'
+    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
+
+    //一个工具类
+    compile 'com.blankj:utilcode:1.3.6'
+
+    //google推荐使用的图片加载框架，加载图片无闪烁
+    implementation 'com.github.bumptech.glide:glide:4.5.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.5.0'
+    kapt 'com.github.bumptech.glide:compiler:4.5.0'
+
+    compile 'com.android.support:multidex:1.0.2'
+
+//    一行代码搞定android6.0权限
+//    https://github.com/yewei02538/HiPermission
+    compile 'me.weyye.hipermission:library:1.0.7'
+
+//    很漂亮的主题
+//    https://github.com/Bilibili/MagicaSakura
+    compile 'com.bilibili:magicasakura:0.1.8@aar'
+
+    //专门显示图片的工具，可点击放大和滑动查看局部
+    //https://github.com/chrisbanes/PhotoView
+    compile 'com.github.chrisbanes:PhotoView:2.0.0'
+
+    //websocket
+    //https://github.com/TooTallNate/Java-WebSocket
+    compile 'org.java-websocket:Java-WebSocket:1.3.4'
+}
+repositories {
+    mavenCentral()
+}

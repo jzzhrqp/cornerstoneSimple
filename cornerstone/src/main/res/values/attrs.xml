@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--<declare-styleable name="SingleTouchView">-->
+        <!--<attr name="src" format="reference" />            &lt;!&ndash; 用于缩放旋转的图标 &ndash;&gt;-->
+        <!--<attr name="editable" format="boolean"/>          &lt;!&ndash; 是否处于可编辑状态 &ndash;&gt;-->
+        <!--<attr name="frameColor" format="color" />         &lt;!&ndash; 边框颜色 &ndash;&gt;-->
+        <!--<attr name="frameWidth" format="dimension" />     &lt;!&ndash; 边框线宽度 &ndash;&gt;-->
+        <!--<attr name="framePadding" format="dimension" />   &lt;!&ndash; 边框与图片的间距 &ndash;&gt;-->
+        <!--<attr name="degree" format="float" />             &lt;!&ndash; 旋转角度 &ndash;&gt;-->
+        <!--<attr name="scale" format="float" />              &lt;!&ndash; 缩放比例 &ndash;&gt;-->
+        <!--<attr name="controlDrawable" format="reference"/> &lt;!&ndash; 控制图标 &ndash;&gt;-->
+        <!--<attr name="controlLocation">                     &lt;!&ndash; 控制图标的位置 &ndash;&gt;-->
+            <!--<enum name="left_top" value="0" />-->
+            <!--<enum name="right_top" value="1" />-->
+            <!--<enum name="right_bottom" value="2" />-->
+            <!--<enum name="left_bottom" value="3" />-->
+        <!--</attr>-->
+    <!--</declare-styleable>-->
+
+    <!--图片滑动浏览-->
+    <declare-styleable name="ProgressWheel">
+        <attr name="matProg_progressIndeterminate" format="boolean" />
+        <attr name="matProg_barColor" format="color" />
+        <attr name="matProg_rimColor" format="color" />
+        <attr name="matProg_rimWidth" format="dimension" />
+        <attr name="matProg_spinSpeed" format="float" />
+        <attr name="matProg_barSpinCycleTime" format="integer" />
+        <attr name="matProg_circleRadius" format="dimension" />
+        <attr name="matProg_fillRadius" format="boolean" />
+        <attr name="matProg_barWidth" format="dimension" />
+        <attr name="matProg_linearProgress" format="boolean" />
+    </declare-styleable>
+</resources>
